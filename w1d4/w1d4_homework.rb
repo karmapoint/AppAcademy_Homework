@@ -50,24 +50,25 @@ class Map
   # assign creates new pairs, or updates an existing pair
   def assign(key, value)
     if lookup(key)
-      @holder.each { |pair| pair[1] = value  if pair[0] == key}
+      @holder.each { |pair| pair[1] = value if pair[0] == key}
     else
       @holder << [key, value]
     end
   end
 
   def lookup(key)
-    @holder.each do |pair| return pair[1] if pair[0] == key }
+    @holder.each { |pair| return pair[1] if pair[0] == key }
     nil
   end
 
   def remove(key)
     if lookup(key)
       @holder.each.with_index do |pair, i|
-        deletable_index = i if pair[0] == key
+        @deletable_index = i if pair[0] == key
       end
+      @holder.delete_at(@deletable_index)
     end
-    @holder.delte_at(deletable_index)
+    nil
   end
 
   def show

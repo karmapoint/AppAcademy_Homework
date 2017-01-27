@@ -41,7 +41,7 @@ end
 
 # Map class as 2D array [[k1,v1], [k2,v2], [k3,v3]]
 class Map
-  attr_reader :holder
+
 
   def initialize
     @holder = [["k1", "v1"]]

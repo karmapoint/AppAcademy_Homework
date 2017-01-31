@@ -25,8 +25,9 @@ class Board
   end
 
   def make_move(start_pos, current_player_name)
+
     stones = @cups[start_pos].length
-    @cups[start_pos].clear
+    @cups[start_pos] = []
     distribute_stones(start_pos, stones, current_player_name)
   end
 
@@ -37,6 +38,7 @@ class Board
     active_goal = "right" if @name1 == current_player_name
 
     while stones_left > 0
+      current_pos += 1
       if active_goal == "right"
         if current_pos == 13
           current_pos = 0
@@ -50,16 +52,25 @@ class Board
           current_pos = 0
         end
       end
-      p @cups[current_pos] << :stone
-
-      current_pos += 1
+      @cups[current_pos] << :stone
       stones_left -= 1
     end
-    render
+    :render
+    next_turn(current_pos, current_player_name)
   end
 
-  def next_turn(ending_cup_idx)
+  def next_turn(ending_cup_idx, current_player_name)
     # helper method to determine what #make_move returns
+    if ending_cup_idx == 6
+      :prompt
+    elsif ending_cup_idx == 13
+      :prompt
+    elsif @cups[ending_cup_idx].length  > 1
+      make_move(ending_cup_idx, current_player_name)
+    else
+     @name1 = current_player_name ? :switch : :prompt
+    end
+
   end
 
   def render
@@ -71,6 +82,7 @@ class Board
   end
 
   def one_side_empty?
+    @cups[0..5].all? { |cup| cup.empty?} || @cups[7..12].all? { |cup| cup.empty?}
   end
 
   def winner

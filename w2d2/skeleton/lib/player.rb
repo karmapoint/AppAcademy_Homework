@@ -17,7 +17,7 @@ class Player
         start_pos - 1
       else
         start_pos
-      end 
+      end
 
     end
   end

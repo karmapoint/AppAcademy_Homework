@@ -33,22 +33,38 @@ def highest_gdp
   SQL
 end
 
-def largest_in_continent
+# def largest_in_continent
   # Find the largest country (by area) in each continent. Show the continent,
   # name, and area.
-  execute(<<-SQL)
-    SELECT
-      continent, name, area
-    FROM
-      countries
-    GROUP BY
-      continent
-  SQL
-end
+#   execute(<<-SQL)
+#     SELECT
+#       continent, name, area
+#     FROM
+#       countries
+#     ORDER BY
+#       area
+#
+#   SQL
+# end
 
 def large_neighbors
   # Some countries have populations more than three times that of any of their
   # neighbors (in the same continent). Give the countries and continents.
   execute(<<-SQL)
+    SELECT
+      c1.name, c1.continent
+    FROM
+      countries AS c1
+    WHERE
+      population > 3 * (
+        SELECT
+          MAX(c2.population)
+        FROM
+          countries AS c2
+        WHERE
+          c1.name != c2.name AND
+          c1.continent = c2.continent
+
+      )
   SQL
 end

@@ -199,38 +199,31 @@ def craiglockhart_to_sighthill
   # Find the routes involving two buses that can go from Craiglockhart to
   # Sighthill. Show the bus no. and company for the first bus, the name of the
   # stop for the transfer, and the bus no. and company for the second bus.
+
   execute(<<-SQL)
-    SELECT DISTINCT
-      start.num,
-      start.company,
-      transfer.name,
-      finish.num,
-      finish.company
-    FROM
-      routes AS start
-    JOIN
-      routes AS to_transfer ON start.num = to_transfer.num AND start.company = to_transfer.company
-    JOIN
-      stops AS transfer ON to_transfer.stop_id = transfer.id
-    JOIN
-      routes AS from_transfer ON transfer.id = from_transfer.stop_id
-    JOIN
-      routes AS finish ON finish.num = from_transfer.num AND finish.company = from_transfer.company
-    WHERE
-      start.stop_id IN (
-        SELECT
-          id
-        FROM
-          stops
-        WHERE
-          name = 'Craiglockhart'
-      ) AND finish.stop_id IN (
-        SELECT
-          id
-        FROM
-          stops
-        WHERE
-          name = 'Sighthill'
-      )
+   SELECT DISTINCT
+    first_bus.num,
+    first_bus.company,
+    transfer.name,
+    second_bus.num,
+    second_bus.company
+  FROM
+    stops AS starting_point
+  JOIN
+    routes AS first_bus ON first_bus.stop_id = starting_point.id
+  JOIN
+    routes AS to_transfer ON to_transfer.num = first_bus.num AND to_transfer.company = first_bus.company
+  JOIN
+    stops AS transfer ON to_transfer.stop_id = transfer.id
+  JOIN
+    routes AS second_bus ON second_bus.stop_id = transfer.id
+  JOIN
+    routes AS to_destination ON second_bus.num = to_destination.num AND second_bus.company = to_destination.company
+  JOIN
+    stops AS destination ON to_destination.stop_id = destination.id
+
+  WHERE
+    starting_point.name = 'Craiglockhart' AND destination.name = 'Sighthill'
+
   SQL
 end

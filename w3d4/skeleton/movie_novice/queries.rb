@@ -54,7 +54,7 @@ def below_average_years
     .select("yr", "COUNT(*) as bad_movies")
     .where("score < 5")
     .group(:yr)
-    .order("bad_movies DESC")
+    .order(bad_movies :desc)
 
 end
 
@@ -65,7 +65,7 @@ def alphabetized_actors
   # are alphabetized differently than the specs.
   # This spec might fail for Ubuntu users. It's ok!
   Actor
-    .all.limit(10)
+    .limit(10)
     .order(:name)
 
 end

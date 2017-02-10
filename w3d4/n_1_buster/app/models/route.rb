@@ -7,7 +7,7 @@ class Route < ActiveRecord::Base
   )
 
   def n_plus_one_drivers
-    buses = self.buses
+    buses = self.buses.includes(:drivers)
 
     all_drivers = {}
     buses.each do |bus|

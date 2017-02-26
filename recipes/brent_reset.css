@@ -1,0 +1,7 @@
+html, body, header, nav, ul, li, a img, main, aside, h2, section, figure, figcaption, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  background: transparent;
+}

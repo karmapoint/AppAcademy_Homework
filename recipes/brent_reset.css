@@ -4,4 +4,5 @@ html, body, header, nav, ul, li, a img, main, aside, h2, section, figure, figcap
   border: 0;
   font: inherit;
   background: transparent;
+  text-decoration: inherit;
 }

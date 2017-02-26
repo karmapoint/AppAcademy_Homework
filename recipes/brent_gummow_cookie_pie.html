@@ -20,7 +20,7 @@
       <img src="appacademylogo.png" style="height:60px" />
     </header>
     <main>
-      <aside>
+      <aside class = "top_item">
         <h2 id="ingredients">Ingredients</h2>
           <ul>
             <li> 2 cans white beans or garbanzos, drained and rinsed (500g total, once drained)</li>
@@ -36,11 +36,11 @@
           </ul>
       </aside>
 
-      <section>
+      <section class= "top_item">
         <h1>Cookie Pie</h1>
         <h2>A delicious and healthy dessert</h2>
         <figure>
-          <img src = "http://chocolatecoveredkatie.com/wp-content/uploads/chocolate-chip-cookie-pie-700x611.jpg" style="height:300px;"/>
+          <img src = "cookie_pie.jpg" style="height:300px;"/>
           <figcaption><a href="http://chocolatecoveredkatie.com/2011/05/31/deep-dish-cookie-pie/" target="_blank">Deep Dish Cookie Pie</a></figcaption>
         </figure>
 
@@ -62,16 +62,15 @@
       </section>
       <section id="reviews">
         <h3>Review this recipe:</h3>
-        <form action="/reviews" method="post">
-          <label for="name">Name:</label>
+        <form action="/reviews" method="post" class="review_form">
+          <label for="name">Name:</label><br>
           <input type="text" id="name" value="">
           <br>
-          <label for="rating">Rating:</label>
-          1 <input type="radio" name="rating" id="rating" value="1"> |
-          2 <input type="radio" name="rating" id="rating" value="2"> |
-          3 <input type="radio" name="rating" id="rating" value="3"> |
-          4 <input type="radio" name="rating" id="rating" value="4"> |
-          5 <input type="radio" name="rating" id="rating" value="5">
+          <label for="rating">1 <input type="radio" name="rating" id="rating" value="1"></label>
+          <label for="rating">2 <input type="radio" name="rating" id="rating" value="2"></label>
+          <label for="rating">3 <input type="radio" name="rating" id="rating" value="3"></label>
+          <label for="rating">4 <input type="radio" name="rating" id="rating" value="4"> </label>
+          <label for="rating">5 <input type="radio" name="rating" id="rating" value="5"></label>
           <br>
           <label for="expertise"></label>
           <select id="expertise">

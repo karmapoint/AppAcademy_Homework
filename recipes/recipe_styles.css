@@ -1,5 +1,8 @@
 body {font-family: "verdana", sans-serif; line-height: 1.6em; margin:0;}
-header { height:70px; background-color: #ff0000; padding-top:10px;}
+header { height:70px; background-color: #ff0000; padding-top:10px;   -webkit-box-shadow: 0px 2px 14px 1px rgba(0,0,0,0.27);
+  -moz-box-shadow: 0px 2px 14px 1px rgba(0,0,0,0.27);
+  box-shadow: 0px 2px 14px 1px rgba(0,0,0,0.27);
+position: fixed; width:100%; z-index: 300; }
 h1 {font-size:32px; margin-bottom:20px; font-weight:lighter;}
 h2 { font-size: 24px; margin-bottom:16px; padding-top:14px;}
 h3 { font-size: 18px; margin-bottom:16px; font-weight: bold;}
@@ -8,7 +11,9 @@ main { width: 960px;
         margin: 0 auto;
         text-align: left;
         position: relative;
-        padding: 16px; }
+        padding: 16px;
+       }
+.top_item { margin-top: 100px;  }
 header img { margin-left:40px;}
 nav ul { list-style-type: none; margin-right: 20px; margin-top:20px; float:right;}
 nav li { display: inline; padding-right:18px; }
@@ -17,5 +22,36 @@ nav a:hover { color: #dddddd; text-decoration: none; background-color:white; col
 footer { height:40px; background-color:#ff0000;}
 footer p {text-align:center; color:#ffffff; padding:10px;}
 footer a {color:#ffffff;}
-aside { width:300px; float: right; border: 1px solid #cccccc; border-radius: 20px; padding:10px; margin-top: 40px;}
+aside { width:300px; float: right; border: 1px solid #cccccc; border-radius: 20px; padding:10px; margin-top: 40px; font-size: 12px;}
+aside ul {list-style-type: none;}
+aside li { margin:16px 0; line-height: 1.4em;}
 section { margin-top:30px;}
+section li { margin:16px 0; line-height: 1.4em;}
+input:last-child:hover {
+    -webkit-filter: brightness(90%);
+}
+input[type ="submit"] { background-color: gold;}
+
+ol li:nth-of-type(2n) { background-color: whitesmoke; }
+
+h2 + .user_review { border-top: 1px solid black;}
+input { margin-bottom: 16px;}
+select { margin-bottom: 16px;}
+figcaption { text-align: center;}
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 27px;
+    height: 27px;
+    background-image: url(stars.png);
+    vertical-align: bottom;
+    margin-bottom: 16px;
+    margin-right: 14px;
+}
+label[for*="rating"] { height: 27px;  line-height: 50px;}
+.review_form input[type="text"] { width: 300px; }
+.review_form select { width: 300px; font-size: 18px; margin-top: 12px; }
+.review_form textarea { width: 300px; height: 100px; font-size: 14px; }
+.review_form input[type="submit"] {font-size: 18px; margin-top: 10px;}
+
+#reviews { border: 1px solid #cccccc; width: 340px; padding: 30px; padding-top: 10px; border-radius: 20px; margin-bottom: 100px; }

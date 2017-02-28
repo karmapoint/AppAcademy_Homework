@@ -18,7 +18,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex: 1 100%;
+    flex:  100%;
   }
 
 nav ul {
@@ -185,4 +185,5 @@ label[for*="rating"] { height: 27px;  line-height: 50px;}
   .mobile-nav-container:hover ul{
     display:block;
   }
+
 }

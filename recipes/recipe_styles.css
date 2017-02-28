@@ -173,9 +173,7 @@ label[for*="rating"] { height: 27px;  line-height: 50px;}
 .mobile-nav li {
   padding: 10px;
 }
-.mobile-nav-container:hover ul{
-  display:block;
-}
+
 
 @media (max-width: 600px) {
   .large-nav { display:none;}
@@ -183,3 +181,8 @@ label[for*="rating"] { height: 27px;  line-height: 50px;}
   h1 { margin-top:0px; }
   .main_recipe { margin-top: 10px;}
   header img { margin-left: 10px; }
+
+  .mobile-nav-container:hover ul{
+    display:block;
+  }
+}

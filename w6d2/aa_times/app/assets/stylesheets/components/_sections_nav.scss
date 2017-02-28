@@ -1,0 +1,18 @@
+.section_nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 2px solid $light-gray;
+  position: relative;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  font-family: $sans-serif;
+}
+
+.section_nav a:hover {
+  background-color: $lightest-gray;
+}
+.section_nav li:last-of-type:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}

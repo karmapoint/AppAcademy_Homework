@@ -6,11 +6,26 @@ h1 {
   font-size: 24px;
   font-style: italic;
   font-weight: bold;
+  padding-bottom: 4px;
 }
 
 h2 {
   font-size: 14px;
   font-weight: bold;
+  padding-bottom: 4px;
+}
+
+.sidebar-title {
+  text-align:center;
+}
+
+h3 {
+  font-size:12px;
+  padding-bottom: 4px;
+}
+
+.sidebar-subhead {
+  text-transform: uppercase;
 }
 
 .headline a:hover {
@@ -20,13 +35,16 @@ h2 {
 
 .byline {
   color: $gray;
-  font-size: 12px;
   font-weight:normal;
 }
 
 figure {
   margin-top:0px;
   margin-left:0px;
+}
+
+figcaption {
+  margin: 10px 0;
 }
 
 .videoWrapper {
@@ -52,15 +70,17 @@ article li {
 }
 
 article p {
-  margin-top: 20px;
+  margin-top: 10px;
   font-family: sans-serif;
   margin-bottom: 20px;
 }
 
 hr {
   height:1px;
+  margin: 14px auto;
   width: 50%;
   color: $light-gray;
+
 }
 
 .comments-link {
@@ -75,4 +95,24 @@ section.top-story {
   padding-bottom: 30px;
   border-bottom: 4px solid $light-gray;
   margin-bottom: 40px;
+}
+
+.thumbnail {
+  height:100px;
+  margin: 10px 0;
+}
+
+.thumbnail img {
+  object-fit: cover;
+  height:100%;
+  width:100%;
+}
+
+.link_list {
+  list-style-type: disc;
+  margin-left: 12px;
+}
+
+.link_list a {
+  font-weight: bold;
 }

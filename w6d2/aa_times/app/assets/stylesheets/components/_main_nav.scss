@@ -18,12 +18,12 @@
 	text-align: center;
 }
 
-#search-modal-btn, #gear-icon-btn {
+#search-modal-btn, #gear-dropdown-btn {
   background-color: transparent;
 	color: $dark-gray;
 }
 
-#search-modal-btn:hover, #gear-icon-btn:hover {
+#search-modal-btn:hover, #gear-dropdown-btn:hover {
   background-color: $lightest-gray;
 	border-color: $lightest-gray;
 }
@@ -34,7 +34,7 @@
  	color: $dark-gray;
  }
 
-#gear-icon-btn {
+#gear-dropdown-btn {
   font-size: 18px;
 }
 

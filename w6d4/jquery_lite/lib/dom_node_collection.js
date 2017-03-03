@@ -27,7 +27,7 @@ class DOMNodeCollection {
 
   attr(key, value = null) {
     if (value === null) {
-      this.getAttribute(key);
+      this.array[0].getAttribute(key);
     } else {
     this.array.forEach((el) => {
         el.setAttribute(key, value);

@@ -23,22 +23,37 @@ class Rainbow extends React.Component {
     this.addGreen = this.addGreen.bind(this);
     this.addBlue = this.addBlue.bind(this);
     this.addViolet = this.addViolet.bind(this);
+    this.addOrange = this.addOrange.bind(this);
+    this.addYellow = this.addYellow.bind(this);
+    this.addIndigo = this.addIndigo.bind(this);
   }
 
   addRed() {
-    // your code here
+    this.props.router.push('/red');
   }
 
   addGreen() {
-    // your code here
+    this.props.router.push('/green');
   }
 
   addBlue() {
-    // your code here
+    this.props.router.push('/blue');
   }
 
   addViolet() {
-    // your code here
+    this.props.router.push('/violet');
+  }
+
+  addOrange() {
+    this.props.router.push('/red/orange');
+  }
+
+  addYellow() {
+    this.props.router.push('/red/yellow');
+  }
+
+  addIndigo() {
+    this.props.router.push('/blue/indigo');
   }
 
   render() {
@@ -46,10 +61,13 @@ class Rainbow extends React.Component {
       <div>
         <h1>Rainbow Router!</h1>
 
-        <h4 onClick={this.addRed}>Red</h4>
-        <h4 onClick={this.addGreen}>Green</h4>
-        <h4 onClick={this.addBlue}>Blue</h4>
-        <h4 onClick={this.addViolet}>Violet</h4>
+        <h4 onClick={this.addRed} className="link">Red</h4>
+        <h4 onClick={this.addGreen}  className="link">Green</h4>
+        <h4 onClick={this.addBlue}  className="link">Blue</h4>
+        <h4 onClick={this.addViolet}  className="link">Violet</h4>
+        <h4 onClick={this.addOrange}  className="link">Orange</h4>
+        <h4 onClick={this.addYellow}  className="link">Yellow</h4>
+        <h4 onClick={this.addIndigo}  className="link">Indigo</h4>
 
         <div id="rainbow">
           {this.props.children}
